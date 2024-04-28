@@ -1,0 +1,19 @@
+resources:
+  - deployment.yaml
+  - service.yaml
+
+# Reference https://github.com/kubernetes-sigs/kustomize/issues/1301#issuecomment-551389198
+# Otherwise kustomize will not add hash value to the configmap reference in deployment as we are not using default namespace
+namespace: dev
+
+commonLabels:
+  app: myflaskapp
+
+commonAnnotations:
+  app: myflaskapp
+
+namePrefix: 
+  kustomized-
+
+nameSuffix:
+  -v1

@@ -1,0 +1,12 @@
+resources:
+  - ../../base
+
+namespace: prod
+
+patches:
+  - path: ./replica-patch.yaml
+
+configMapGenerator:
+- name: my-configmap
+  literals:
+  - CUSTOM_HEADER=Kustomized for PROD environment!

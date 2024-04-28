@@ -1,0 +1,10 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: myflaskapp
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 5000
+  type: ClusterIP
